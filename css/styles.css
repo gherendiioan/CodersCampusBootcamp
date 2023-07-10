@@ -1,0 +1,236 @@
+/*Body styles*/
+
+body {
+
+  background: linear-gradient(#4912f6, #4a14f7);
+  font-family: 'Roboto', sans-serif;
+
+}
+
+
+
+/*Header Flex*/
+
+header {
+
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between ;
+  align-items: center;
+  margin: auto;
+  flex-wrap: wrap;
+
+}
+
+
+
+/*Header styles*/
+
+header img {
+
+  width: 150px;
+
+}
+
+
+header button:nth-of-type(1) {
+
+  font-size: 20px;
+  font-family: Roboto;
+  background-color: inherit;
+  color: hsla(0,0%,100%,.7);
+  border: none;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  margin-right: 10px;
+
+}
+
+header button:hover:nth-of-type(1) {
+
+  color: #ffffff;
+  
+}
+
+
+.buttons {
+
+  font-size: 20px;
+  font-family: Roboto;
+  border: none;
+  background: orange;
+  cursor: pointer;
+  padding: 13px 30px ;
+  border-radius: 30px;
+  color: #ffffff;
+  font-weight: bold;
+  transition: background 1s;
+ 
+}
+
+
+button:hover:nth-of-type(2){
+  
+  background: #ee7a38;
+  
+}
+
+
+
+/*Main styles*/
+
+#mainstyle {
+
+  color: white;
+  width: 80%;
+  margin: 7em auto;
+  
+}
+
+
+main section h1 {
+
+  font-size: 2em;
+  font-weight: normal;
+  margin: auto;
+
+}
+
+
+main section h1 + p {
+
+  font-size: 3em;
+  font-weight: 520;  
+  margin: auto;
+
+}
+
+
+main section + img {
+
+  width: 120%;
+  /*flex-basis: 10rem;*/
+
+}
+
+
+main > section {
+
+  width: 90%;
+
+}
+
+
+#b_button {
+
+  padding: 1em 30px;
+  margin-top: 2em;
+
+}
+
+
+main section button:hover {
+
+  background: #ee7a38;
+
+}
+
+
+
+/*Main flex*/
+
+main {
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-wrap: no-wrap;
+
+}
+
+
+h3 a {
+
+  display: flex;
+  width: 80%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: hsla(0,0%,100%,.7);
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+
+h3 a:hover {
+ 
+  color: #ffffff;
+
+}
+
+
+
+/*Section styles*/
+
+section {
+
+  color: white;
+
+}
+
+
+#adjust2 {
+
+  width: 85%;
+  height: auto;
+
+}
+
+
+#adjust1 {
+  width: 100%;
+  height: auto;
+
+}
+
+
+section#section {
+
+  margin-top: 7em;
+
+}
+
+
+
+/*Section flex*/
+
+#section {
+
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: auto;
+  justify-content: space-between;
+  align-items: baseline;
+
+}
+
+
+.sectionflex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: auto;
+  width: 40%;
+  align-items: baseline;
+  height: 80%;
+
+}
+
+
+
+
+
