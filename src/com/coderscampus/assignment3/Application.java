@@ -1,4 +1,4 @@
-package com.whatifitsdifferent.assignment3;
+package com.coderscampus.assignment3;
 
 import java.io.IOException;
 
