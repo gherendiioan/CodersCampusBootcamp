@@ -1,4 +1,4 @@
-package com.whatifitsdifferent.assignment5;
+package com.coderscampus.assignment5;
 
 public class CustomArrayListApp {
 
