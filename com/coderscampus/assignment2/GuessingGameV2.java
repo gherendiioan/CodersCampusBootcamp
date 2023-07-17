@@ -1,4 +1,4 @@
-package com.whatifitsdifferent.com.assignment2;
+package com.coderscampus.assignment2;
 
 import java.util.Random;
 import java.util.Scanner;
