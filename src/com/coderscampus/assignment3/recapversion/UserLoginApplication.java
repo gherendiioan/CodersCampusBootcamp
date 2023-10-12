@@ -6,44 +6,52 @@ import java.util.Scanner;
 public class UserLoginApplication {
 
 	public static void main(String[] args) throws IOException {
-	
-		User user = new User();
+
 		UserService userService = new UserService();
 		String[] filedata = userService.fileReading();
 		userService.createUsers(filedata);
-//		initial place for initializing the scanner
-//		Scanner userInputScanner = new Scanner(System.in);
-//		String userInputScannerString = userInputScanner.nextLine();
-		
+
 		String userInputEmail = null;
 		String userInputPassword = null;
-		
+
 		Scanner userInputScanner = new Scanner(System.in);
-//		String userInputString = userInputScanner.nextLine();
-		
-		System.out.println("Enter your email: ");
-//		String userInputScannerEmail = userInputScanner.nextLine();
-		userInputEmail = userInputScanner.nextLine();
+
+		int numberOFAttempts = 4;
+		while (numberOFAttempts >= 0) {
+
+			userInputEmail = emailInput(userInputScanner);
+			userInputPassword = passwordInput(userInputScanner);
+
+			if (userService.validationMethod(userInputEmail, userInputPassword,
+					userService.createUsers(filedata)) != null) {
+				break;
+			}
+
+			if (numberOFAttempts < 1) {
+				System.out.println("Too many failed login attempts, you are now locked out.");
+				break;
+			}
+
+			if (userService.validationMethod(userInputEmail, userInputPassword,
+					userService.createUsers(filedata)) == null) {
+				numberOFAttempts--;
+				System.out.println("Invalid login, please try again");
+			}
+		}
+	}
+
+	private static String passwordInput(Scanner userInputScanner) {
+		String userInputPassword;
 		System.out.println("Enter your password: ");
 		userInputPassword = userInputScanner.nextLine();
-		
-		if(userService.validationMethod(userInputEmail, userInputPassword, userService.createUsers(filedata)) != null) {
-//			Scanner userInputScanner = new Scanner(System.in);
-//			String userInputString = userInputScanner.nextLine();
-//			
-//			System.out.println("Enter your email: ");
-//			String userInputScannerEmail = userInputScanner.nextLine();
-//			userInputEmail = userInputScanner.nextLine();
-//			System.out.println("Enter your password: ");
-//			userInputPassword = userInputScanner.nextLine();
-			
-			userService.validationMethod(userInputEmail, userInputPassword, userService.createUsers(filedata));
-		
-		}
-		
-		
-		
+		return userInputPassword;
+	}
 
+	private static String emailInput(Scanner userInputScanner) {
+		String userInputEmail;
+		System.out.println("Enter your email: ");
+		userInputEmail = userInputScanner.nextLine();
+		return userInputEmail;
 	}
 
 }

@@ -19,24 +19,18 @@ public class UserService {
 			// Count the number of lines in the file
 			while (fileReadingVar.readLine() != null) {
 				lineCount++;
-				}
+			}
 
 			// Initialize the array based on the line count
 			fileResources = new String[lineCount];
-//			
-			
 
 			// Reset the BufferedReader
 			fileReadingVar.close();
 			fileReadingVar = new BufferedReader(new FileReader("data.txt"));
-			
-			for(int i = 0; i < fileResources.length; i++) {
+
+			for (int i = 0; i < fileResources.length; i++) {
 				fileResources[i] = fileReadingVar.readLine();
 			}
-			
-			
-//			fileResources[0] = fileReadingVar.readLine();
-			
 
 		} catch (FileNotFoundException e) {
 			System.out.println("Oops, file not found");
@@ -71,28 +65,15 @@ public class UserService {
 	public User validationMethod(String userInputUserName, String userInputPassword, User[] users) {
 
 		for (User user : users) {
-			int numberOfAttempts = 5;
-			
-			while (numberOfAttempts > 0) {
-				if (userInputUserName.equalsIgnoreCase(user.getUsername()) && userInputPassword.equalsIgnoreCase(user.getPassword())) {
-					System.out.println("Welcome: " + user.getName());
-					break;
-				} else {
-					System.out.println("Invalid login, please try again");
-					numberOfAttempts--;
-					break;
-				}
+
+			if (userInputUserName.equalsIgnoreCase(user.getUsername())
+					&& userInputPassword.equalsIgnoreCase(user.getPassword())) {
+				System.out.println("Welcome: " + user.getName());
+				return user;
+
 			}
-			
-			if (numberOfAttempts == 0) {
-				System.out.println("Too many failed login attempts, you are now locked out.");
-				break;
-			}
-			
+
 		}
-
 		return null;
-
 	}
-
 }
