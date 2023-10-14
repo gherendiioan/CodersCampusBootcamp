@@ -21,7 +21,6 @@ public class UserLoginApplication {
 
 			userInputEmail = emailInput(userInputScanner);
 			userInputPassword = passwordInput(userInputScanner);
-
 			if (userService.validationMethod(userInputEmail, userInputPassword,
 					userService.createUsers(filedata)) != null) {
 				break;

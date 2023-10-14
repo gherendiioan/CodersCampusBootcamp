@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class UserService {
 
-	String[] fileReading() throws IOException {
+	public String[] fileReading() throws IOException {
 
 		String[] fileResources = null;
 
