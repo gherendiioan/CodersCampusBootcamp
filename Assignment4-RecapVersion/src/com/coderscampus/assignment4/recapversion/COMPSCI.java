@@ -1,28 +1,21 @@
 package com.coderscampus.assignment4.recapversion;
 
-public class COMPSCI extends Student{
-	
-	private String name;
+public class COMPSCI extends Student {
+
 	private int ID;
-	private String course;
+	private String name;
 	private int grade;
-	
-	
 
 	public COMPSCI(String course, String name, int iD, int grade) {
 		super(course);
-		this.name = name;
 		ID = iD;
+		this.name = name;
 		this.grade = grade;
 	}
 
-
-
 	@Override
 	public String toString() {
-		return "COMPSCI [name=" + name + ", ID=" + ID + ", course=" + course + ", grade=" + grade + "]";
+		return "COMPSCI [ID=" + ID + ", name=" + name + ", grade=" + grade + ", course=" + course + "]";
 	}
-
-		
 
 }
