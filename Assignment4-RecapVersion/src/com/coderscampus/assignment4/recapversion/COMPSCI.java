@@ -1,21 +1,24 @@
 package com.coderscampus.assignment4.recapversion;
 
-public class COMPSCI extends Student {
+public abstract class COMPSCI extends StudentTemplate {
 
-	private int ID;
-	private String name;
-	private int grade;
+	private String ID;
+	private String grade;
 
-	public COMPSCI(String course, String name, int iD, int grade) {
-		super(course);
-		ID = iD;
-		this.name = name;
-		this.grade = grade;
+	public String getID() {
+		return ID;
 	}
 
-	@Override
-	public String toString() {
-		return "COMPSCI [ID=" + ID + ", name=" + name + ", grade=" + grade + ", course=" + course + "]";
+	public void setID(String iD) {
+		ID = iD;
+	}
+
+	public String getGrade() {
+		return grade;
+	}
+
+	public void setGrade(String grade) {
+		this.grade = grade;
 	}
 
 }
