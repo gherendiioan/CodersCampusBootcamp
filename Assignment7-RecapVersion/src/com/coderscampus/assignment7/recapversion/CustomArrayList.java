@@ -63,12 +63,14 @@ public class CustomArrayList<T> implements CustomList<T> {
 		}
 
 		T removedItem = (T) items[index];
-
-		for (int i = index; i < arrayIncrement - 1; i++) {
-			items[i] = items[i + 1];
+		if(index < arrayIncrement -1) {
+			System.arraycopy(items, index +1, items, index , arrayIncrement-index-1);
 		}
+
+
 		
 		arrayIncrement--;
+		items[arrayIncrement] = null;
 		return removedItem;
 	}
 
