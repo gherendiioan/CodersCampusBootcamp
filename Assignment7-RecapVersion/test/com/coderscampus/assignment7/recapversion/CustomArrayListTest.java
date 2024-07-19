@@ -58,9 +58,10 @@ class CustomArrayListTest {
 	void should_remove_from_beginning_of_arraylist() {
 		Integer itemRemoved = sut.remove(0);
 
+		
 		assertEquals(1, itemRemoved);
-		assertEquals(19, sut.getSize());
 		assertEquals(2, sut.get(0));
+		assertEquals(19, sut.getSize());
 		assertEquals(20, sut.get(sut.getSize() - 1));
 	}
 

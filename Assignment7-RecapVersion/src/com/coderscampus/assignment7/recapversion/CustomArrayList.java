@@ -1,11 +1,10 @@
 package com.coderscampus.assignment7.recapversion;
 
 public class CustomArrayList<T> implements CustomList<T> {
-	
+
 	Object[] items = new Object[10];
 	int arrayIncrement = 0;
 
-	
 	@Override
 	public boolean add(T item) {
 
@@ -22,7 +21,6 @@ public class CustomArrayList<T> implements CustomList<T> {
 		return increasedArray;
 	}
 
-	
 	@Override
 	public boolean add(int index, T item) throws IndexOutOfBoundsException {
 		if (index > arrayIncrement || index < 0) {
@@ -38,7 +36,6 @@ public class CustomArrayList<T> implements CustomList<T> {
 		return true;
 	}
 
-	
 	@Override
 	public int getSize() {
 
@@ -54,7 +51,6 @@ public class CustomArrayList<T> implements CustomList<T> {
 		return (T) items[index];
 	}
 
-	
 	@SuppressWarnings("unchecked")
 	@Override
 	public T remove(int index) throws IndexOutOfBoundsException {
@@ -63,12 +59,10 @@ public class CustomArrayList<T> implements CustomList<T> {
 		}
 
 		T removedItem = (T) items[index];
-		if(index < arrayIncrement -1) {
-			System.arraycopy(items, index +1, items, index , arrayIncrement-index-1);
+		if (index < arrayIncrement - 1) {
+			System.arraycopy(items, index + 1, items, index, arrayIncrement - index - 1);
 		}
 
-
-		
 		arrayIncrement--;
 		items[arrayIncrement] = null;
 		return removedItem;
