@@ -1,6 +1,6 @@
 package com.coderscampus.Assignment10.dto;
 
-public class Meal {
+public class MealDTO {
 
 	private int id;
 	private String title;

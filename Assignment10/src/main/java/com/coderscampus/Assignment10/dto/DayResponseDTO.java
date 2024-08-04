@@ -2,24 +2,24 @@ package com.coderscampus.Assignment10.dto;
 
 import java.util.List;
 
-public class DayResponse {
+public class DayResponseDTO {
 
-	private List<Meal> meals;
-	private Nutrients nutrients;
+	private List<MealDTO> meals;
+	private NutrientsDTO nutrients;
 
-	public List<Meal> getMeals() {
+	public List<MealDTO> getMeals() {
 		return meals;
 	}
 
-	public void setMeals(List<Meal> meals) {
+	public void setMeals(List<MealDTO> meals) {
 		this.meals = meals;
 	}
 
-	public Nutrients getNutrients() {
+	public NutrientsDTO getNutrients() {
 		return nutrients;
 	}
 
-	public void setNutrients(Nutrients nutrients) {
+	public void setNutrients(NutrientsDTO nutrients) {
 		this.nutrients = nutrients;
 	}
 

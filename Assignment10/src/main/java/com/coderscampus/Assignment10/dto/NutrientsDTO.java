@@ -1,6 +1,6 @@
 package com.coderscampus.Assignment10.dto;
 
-public class Nutrients {
+public class NutrientsDTO {
 	private double calories;
 	private double protein;
 	private double fat;
