@@ -8,6 +8,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.coderscampus.Assignment10.dto.DayResponseDTO;
+import com.coderscampus.Assignment10.dto.WeekResponseDTO;
 
 @Service
 public class MealPlanService {
@@ -31,7 +32,7 @@ public class MealPlanService {
 		
 	}
 	
-	public DayResponseDTO getDayMeals(int numCalories, String diet, String exclusions) {
+	public DayResponseDTO getDayMeals(Integer numCalories, String diet, String exclusions) {
 		
 		String url = UriComponentsBuilder.fromHttpUrl(baseUrl + mealPlanEndpoint)
 				.queryParam("timeFrame", "day")
@@ -55,5 +56,26 @@ public class MealPlanService {
 		}
 		
 	}
+	
+	public WeekResponseDTO getWeekMeals(Integer numCalories, String diet, String exclusions) {
+		String url = UriComponentsBuilder.fromHttpUrl(baseUrl + mealPlanEndpoint)
+				.queryParam("timeFrame", "day")
+				.queryParam("targetCalories", numCalories)
+				.queryParam("diet", diet)
+				.queryParam("exclude", exclusions)
+				.queryParam("apiKey", apiKey)
+				.toUriString();
+		
+		try {
+			WeekResponseDTO response = restTemplate.getForObject(url, WeekResponseDTO.class);
+			logger.debug("Received weekly meal plan: {}", response);
+			return response;
+		}catch (Exception e) {
+			logger.error("Error fetching weekly meal plan", e);
+			throw e;
+		}
+	}
+	
+	
 
 }
