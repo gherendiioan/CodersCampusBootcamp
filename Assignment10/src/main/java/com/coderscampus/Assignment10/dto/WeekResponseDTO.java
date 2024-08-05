@@ -1,18 +1,17 @@
 package com.coderscampus.Assignment10.dto;
 
-import java.util.List;
 import java.util.Map;
 
 public class WeekResponseDTO {
 
-	private Map<String, List<MealDTO>> week;
+	private Map<String, DayResponseDTO> week;
 	private NutrientsDTO nutrients;
 
-	public Map<String, List<MealDTO>> getWeek() {
+	public Map<String, DayResponseDTO> getWeek() {
 		return week;
 	}
 
-	public void setWeek(Map<String, List<MealDTO>> week) {
+	public void setWeek(Map<String, DayResponseDTO> week) {
 		this.week = week;
 	}
 
